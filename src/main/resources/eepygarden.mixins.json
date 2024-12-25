@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.wetnoodle.mixin",
+	"package": "net.wetnoodle.eepygarden.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"

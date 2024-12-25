@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.wetnoodle.TheGardenAwokeTooEarly"
+			"net.wetnoodle.eepygarden.TheGardenAwokeTooEarly"
 		],
 		"fabric-datagen": [
-			"net.wetnoodle.TheGardenAwokeTooEarlyDataGenerator"
+			"net.wetnoodle.eepygarden.TheGardenAwokeTooEarlyDataGenerator"
 		]
 	},
 	"mixins": [

@@ -1,0 +1,7 @@
+{
+  "parent": "eepygarden:block/cross_emissive",
+  "textures": {
+    "cross": "eepygarden:block/open_eyeblossom",
+    "cross_emissive": "eepygarden:block/open_eyeblossom_emissive"
+  }
+}

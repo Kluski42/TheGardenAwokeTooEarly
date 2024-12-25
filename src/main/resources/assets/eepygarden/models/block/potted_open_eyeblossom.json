@@ -1,0 +1,7 @@
+{
+  "parent": "eepygarden:block/flower_pot_cross_emissive",
+  "textures": {
+    "cross_emissive": "eepygarden:block/open_eyeblossom_emissive",
+    "plant": "eepygarden:block/open_eyeblossom"
+  }
+}
