@@ -8,7 +8,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.particles.TargetColorParticleOption;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -27,6 +26,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEvent.Context;
 import net.minecraft.world.phys.Vec3;
 import net.wetnoodle.eepygarden.registry.EGBlocks;
+import net.wetnoodle.eepygarden.registry.EGSounds;
 
 public class EyeblossomBlock extends FlowerBlock {
     public static final MapCodec<EyeblossomBlock> CODEC = RecordCodecBuilder.mapCodec(
@@ -52,14 +52,13 @@ public class EyeblossomBlock extends FlowerBlock {
         this.type = EyeblossomBlock.Type.fromBoolean(bl);
     }
 
-    private final SoundEvent EYEBLOSSOM_IDLE = SoundEvents.SNIFFER_IDLE;
     @Override
     public void animateTick(BlockState blockState, Level level, BlockPos blockPos, RandomSource randomSource) {
         if (this.type.emitSounds() && randomSource.nextInt(700) == 0) {
             BlockState blockState2 = level.getBlockState(blockPos.below());
             if (blockState2.is(Blocks.PALE_MOSS_BLOCK)) {
                 level.playLocalSound(
-                        (double) blockPos.getX(), (double) blockPos.getY(), (double) blockPos.getZ(), EYEBLOSSOM_IDLE, SoundSource.BLOCKS, 1.0F, 1.0F, false
+                        (double) blockPos.getX(), (double) blockPos.getY(), (double) blockPos.getZ(), EGSounds.EYEBLOSSOM_IDLE, SoundSource.BLOCKS, 1.0F, 1.0F, false
                 );
             }
         }
@@ -121,13 +120,9 @@ public class EyeblossomBlock extends FlowerBlock {
         return new MobEffectInstance(MobEffects.POISON, 25);
     }
 
-//    private final SoundEvent EYEBLOSSOM_OPEN_LONG = SoundEvents.BARREL_OPEN;
-//    private final SoundEvent EYEBLOSSOM_OPEN = SoundEvents.BARREL_OPEN;
-//    private final SoundEvent EYEBLOSSOM_CLOSE_LONG = SoundEvents.BARREL_OPEN;
-//    private final SoundEvent EYEBLOSSOM_CLOSE = SoundEvents.BARREL_OPEN;
     public enum Type {
-        OPEN(true, MobEffects.BLINDNESS, 11.0F, SoundEvents.BARREL_OPEN, SoundEvents.BARREL_OPEN, 16545810),
-        CLOSED(false, MobEffects.CONFUSION, 7.0F, SoundEvents.BARREL_OPEN, SoundEvents.BARREL_OPEN, 6250335);
+        OPEN(true, MobEffects.BLINDNESS, 11.0F, EGSounds.EYEBLOSSOM_OPEN_LONG, EGSounds.EYEBLOSSOM_OPEN, 16545810),
+        CLOSED(false, MobEffects.CONFUSION, 7.0F, EGSounds.EYEBLOSSOM_CLOSE_LONG, EGSounds.EYEBLOSSOM_CLOSE, 6250335);
 
         final boolean open;
         final Holder<MobEffect> effect;
@@ -136,13 +131,13 @@ public class EyeblossomBlock extends FlowerBlock {
         final SoundEvent shortSwitchSound;
         private final int particleColor;
 
-        Type(final boolean bl, final Holder<MobEffect> holder, final float f, final SoundEvent soundEvent, final SoundEvent soundEvent2, final int j) {
-            this.open = bl;
-            this.effect = holder;
-            this.effectDuration = f;
-            this.longSwitchSound = soundEvent;
-            this.shortSwitchSound = soundEvent2;
-            this.particleColor = j;
+        Type(final boolean open, final Holder<MobEffect> effect, final float effectDuration, final SoundEvent longSwitchSound, final SoundEvent shortSwitchSound, final int particleColor) {
+            this.open = open;
+            this.effect = effect;
+            this.effectDuration = effectDuration;
+            this.longSwitchSound = longSwitchSound;
+            this.shortSwitchSound = shortSwitchSound;
+            this.particleColor = particleColor;
         }
 
         public Block block() {

@@ -1,0 +1,42 @@
+{
+  "block.eyeblossom.close": {
+    "sounds": [
+      "eepygarden:block/eyeblossom/eyeblossom_close1",
+      "eepygarden:block/eyeblossom/eyeblossom_close2",
+      "eepygarden:block/eyeblossom/eyeblossom_close3"
+    ],
+    "subtitle": "subtitles.block.eyeblossom.close"
+  },
+  "block.eyeblossom.close_long": {
+    "sounds": [
+      "eepygarden:block/eyeblossom/eyeblossom_close_long"
+    ],
+    "subtitle": "subtitles.block.eyeblossom.close"
+  },
+  "block.eyeblossom.idle": {
+    "sounds": [
+      "eepygarden:block/eyeblossom/eyeblossom_idle1",
+      "eepygarden:block/eyeblossom/eyeblossom_idle2",
+      "eepygarden:block/eyeblossom/eyeblossom_idle3",
+      "eepygarden:block/eyeblossom/eyeblossom_idle4",
+      "eepygarden:block/eyeblossom/eyeblossom_idle5",
+      "eepygarden:block/eyeblossom/eyeblossom_idle6"
+    ],
+    "subtitle": "subtitles.ambient.sound"
+  },
+  "block.eyeblossom.open": {
+    "sounds": [
+      "eepygarden:block/eyeblossom/eyeblossom_open1",
+      "eepygarden:block/eyeblossom/eyeblossom_open2",
+      "eepygarden:block/eyeblossom/eyeblossom_open3",
+      "eepygarden:block/eyeblossom/eyeblossom_open4"
+    ],
+    "subtitle": "subtitles.block.eyeblossom.open"
+  },
+  "block.eyeblossom.open_long": {
+    "sounds": [
+      "eepygarden:block/eyeblossom/eyeblossom_open_long"
+    ],
+    "subtitle": "subtitles.block.eyeblossom.open"
+  }
+}
