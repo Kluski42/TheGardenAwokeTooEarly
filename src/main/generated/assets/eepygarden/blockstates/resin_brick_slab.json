@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "eepygarden:block/resin_brick_slab"
+    },
+    "type=double": {
+      "model": "eepygarden:block/resin_bricks"
+    },
+    "type=top": {
+      "model": "eepygarden:block/resin_brick_slab_top"
+    }
+  }
+}
