@@ -125,7 +125,7 @@ public class EyeblossomBlock extends FlowerBlock {
         CLOSED(false, MobEffects.CONFUSION, 7.0F, EGSounds.EYEBLOSSOM_CLOSE_LONG, EGSounds.EYEBLOSSOM_CLOSE, 6250335);
 
         final boolean open;
-        final Holder<MobEffect> effect;
+        public final Holder<MobEffect> effect;
         final float effectDuration;
         final SoundEvent longSwitchSound;
         final SoundEvent shortSwitchSound;
