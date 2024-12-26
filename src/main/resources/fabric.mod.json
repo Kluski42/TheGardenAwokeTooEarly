@@ -19,7 +19,7 @@
 			"net.wetnoodle.eepygarden.TheGardenAwokeTooEarly"
 		],
 		"fabric-datagen": [
-			"net.wetnoodle.eepygarden.TheGardenAwokeTooEarlyDataGenerator"
+			"net.wetnoodle.eepygarden.datagen.TheGardenAwokeTooEarlyDataGenerator"
 		]
 	},
 	"mixins": [

@@ -5,12 +5,14 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
 import net.wetnoodle.eepygarden.registry.EGBlocks;
 import net.wetnoodle.eepygarden.registry.EGSounds;
+import net.wetnoodle.eepygarden.worldgen.EGBiomeModifications;
 
 public class TheGardenAwokeTooEarly implements ModInitializer {
     @Override
     public void onInitialize() {
         EGBlocks.init();
         EGSounds.init();
+        EGBiomeModifications.init();
         clientInitialize();
     }
 
