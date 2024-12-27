@@ -49,9 +49,6 @@ public class EGBlocks {
                     .requiredFeatures(FeatureFlags.WINTER_DROP)
     );
 
-    private static final SoundType RESIN = SoundType.AMETHYST;
-    private static final SoundType SoundTypeRESIN_BRICKS = SoundType.DEEPSLATE_BRICKS;
-
     public static final Block RESIN_CLUMP = register(
             "resin_clump",
             ResinClumpBlock::new,
@@ -59,7 +56,7 @@ public class EGBlocks {
                     .mapColor(MapColor.TERRACOTTA_ORANGE)
                     .replaceable()
                     .noCollission()
-                    .sound(RESIN)
+                    .sound(EGSounds.RESIN_TYPE)
                     .ignitedByLava()
                     .pushReaction(PushReaction.DESTROY)
                     .requiredFeatures(FeatureFlags.WINTER_DROP)
@@ -68,7 +65,7 @@ public class EGBlocks {
     public static final Block RESIN_BLOCK = register(
             "resin_block",
             Block::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).sound(RESIN)
+            BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).sound(EGSounds.RESIN_TYPE)
                     .requiredFeatures(FeatureFlags.WINTER_DROP)
     );
     public static final Block RESIN_BRICKS = register(
@@ -78,7 +75,7 @@ public class EGBlocks {
                     .mapColor(MapColor.TERRACOTTA_ORANGE)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundTypeRESIN_BRICKS)
+                    .sound(EGSounds.RESIN_BRICKS_TYPE)
                     .strength(1.5F, 6.0F)
                     .requiredFeatures(FeatureFlags.WINTER_DROP)
     );

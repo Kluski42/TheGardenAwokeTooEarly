@@ -38,5 +38,83 @@
       "eepygarden:block/eyeblossom/eyeblossom_open_long"
     ],
     "subtitle": "subtitles.block.eyeblossom.open"
+  },
+
+  "block.resin.break": {
+    "sounds": [
+      "eepygarden:block/resin/resin_break1",
+      "eepygarden:block/resin/resin_break2",
+      "eepygarden:block/resin/resin_break3",
+      "eepygarden:block/resin/resin_break4",
+      "eepygarden:block/resin/resin_break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.resin.fall": {
+    "sounds": [
+      "eepygarden:block/resin/resin_fall"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.resin.place": {
+    "sounds": [
+      "eepygarden:block/resin/resin_place1",
+      "eepygarden:block/resin/resin_place2",
+      "eepygarden:block/resin/resin_place3",
+      "eepygarden:block/resin/resin_place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.resin.step": {
+    "sounds": [
+      "eepygarden:block/resin/resin_step1",
+      "eepygarden:block/resin/resin_step2",
+      "eepygarden:block/resin/resin_step3",
+      "eepygarden:block/resin/resin_step4",
+      "eepygarden:block/resin/resin_step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.resin_bricks.break": {
+    "sounds": [
+      "eepygarden:block/resin_bricks/resin_brick_break"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.resin_bricks.fall": {
+    "sounds": [
+      "eepygarden:block/resin_bricks/resin_brick_fall"
+    ],
+    "subtitle": "subtitles.block.generic.fall"
+  },
+  "block.resin_bricks.hit": {
+    "sounds": [
+      "eepygarden:block/resin_bricks/resin_brick_hit1",
+      "eepygarden:block/resin_bricks/resin_brick_hit2",
+      "eepygarden:block/resin_bricks/resin_brick_hit3",
+      "eepygarden:block/resin_bricks/resin_brick_hit4",
+      "eepygarden:block/resin_bricks/resin_brick_hit5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.resin_bricks.place": {
+    "sounds": [
+      "eepygarden:block/resin_bricks/resin_brick_place1",
+      "eepygarden:block/resin_bricks/resin_brick_place2",
+      "eepygarden:block/resin_bricks/resin_brick_place3",
+      "eepygarden:block/resin_bricks/resin_brick_place4",
+      "eepygarden:block/resin_bricks/resin_brick_place5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.resin_bricks.step": {
+    "sounds": [
+      "eepygarden:block/resin_bricks/resin_brick_step1",
+      "eepygarden:block/resin_bricks/resin_brick_step2",
+      "eepygarden:block/resin_bricks/resin_brick_step3",
+      "eepygarden:block/resin_bricks/resin_brick_step4",
+      "eepygarden:block/resin_bricks/resin_brick_step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }
