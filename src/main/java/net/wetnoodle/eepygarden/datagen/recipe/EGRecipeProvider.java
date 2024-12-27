@@ -34,7 +34,7 @@ public class EGRecipeProvider extends FabricRecipeProvider {
                 suspiciousStew(OPEN_EYEBLOSSOM.asItem(), (SuspiciousEffectHolder) OPEN_EYEBLOSSOM);
                 suspiciousStew(CLOSED_EYEBLOSSOM.asItem(), (SuspiciousEffectHolder) CLOSED_EYEBLOSSOM);
 
-                nineBlockStorageRecipes(RecipeCategory.BUILDING_BLOCKS, RESIN_CLUMP, RecipeCategory.MISC, RESIN_BLOCK);
+                nineBlockStorageRecipes(RecipeCategory.MISC, RESIN_CLUMP, RecipeCategory.BUILDING_BLOCKS, RESIN_BLOCK);
 
                 this.shaped(RecipeCategory.MISC, Blocks.CREAKING_HEART)
                         .define('L', Blocks.PALE_OAK_LOG)

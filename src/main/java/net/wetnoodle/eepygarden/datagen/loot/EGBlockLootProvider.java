@@ -18,8 +18,8 @@ public class EGBlockLootProvider extends FabricBlockLootTableProvider {
         this.dropSelf(EGBlocks.CLOSED_EYEBLOSSOM);
         this.dropPottedContents(EGBlocks.POTTED_OPEN_EYEBLOSSOM);
         this.dropPottedContents(EGBlocks.POTTED_CLOSED_EYEBLOSSOM);
-
 //        this.createMultifaceBlockDrops(EGBlocks.RESIN_CLUMP, );
+        // Creanking heart done manually
         this.dropSelf(EGBlocks.RESIN_BLOCK);
         this.dropSelf(EGBlocks.RESIN_BRICKS);
         this.dropSelf(EGBlocks.CHISELED_RESIN_BRICKS);
