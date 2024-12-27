@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "eepygarden:resin_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "eepygarden:resin_clump"
+  }
+}
