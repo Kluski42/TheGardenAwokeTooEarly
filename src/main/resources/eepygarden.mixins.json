@@ -3,7 +3,7 @@
 	"package": "net.wetnoodle.eepygarden.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+      "CreakingHeartBlockEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
