@@ -62,12 +62,14 @@ public class EGBlocks {
                     .sound(RESIN)
                     .ignitedByLava()
                     .pushReaction(PushReaction.DESTROY)
+                    .requiredFeatures(FeatureFlags.WINTER_DROP)
     );
 
     public static final Block RESIN_BLOCK = register(
             "resin_block",
             Block::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).sound(RESIN)
+                    .requiredFeatures(FeatureFlags.WINTER_DROP)
     );
     public static final Block RESIN_BRICKS = register(
             "resin_bricks",
@@ -78,6 +80,7 @@ public class EGBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundTypeRESIN_BRICKS)
                     .strength(1.5F, 6.0F)
+                    .requiredFeatures(FeatureFlags.WINTER_DROP)
     );
     public static final Block RESIN_BRICK_STAIRS = register(
             "resin_brick_stairs",
@@ -86,33 +89,18 @@ public class EGBlocks {
     );
     public static final Block RESIN_BRICK_SLAB = register(
             "resin_brick_slab",
-            properties -> new SlabBlock(properties),
-            BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_ORANGE)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundTypeRESIN_BRICKS)
-                    .strength(1.5F, 6.0F)
+            SlabBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(RESIN_BRICKS)
     );
     public static final Block RESIN_BRICK_WALL = register(
             "resin_brick_wall",
-            properties -> new WallBlock(properties),
-            BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_ORANGE)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundTypeRESIN_BRICKS)
-                    .strength(1.5F, 6.0F)
+            WallBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(RESIN_BRICKS)
     );
     public static final Block CHISELED_RESIN_BRICKS = register(
             "chiseled_resin_bricks",
             Block::new,
-            BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_ORANGE)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundTypeRESIN_BRICKS)
-                    .strength(1.5F, 6.0F)
+            BlockBehaviour.Properties.ofFullCopy(RESIN_BRICKS)
     );
 
     public static final BlockFamily FAMILY_RESIN_BRICKS = BlockFamilies.familyBuilder(RESIN_BRICKS)

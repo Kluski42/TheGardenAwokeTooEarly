@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.wetnoodle.eepygarden.registry.EGBlocks;
+import net.wetnoodle.eepygarden.registry.EGItems;
 
 import java.util.function.Function;
 
@@ -36,6 +37,7 @@ public class EGModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators generator) {
         generator.generateFlatItem(EGBlocks.RESIN_CLUMP.asItem(), ModelTemplates.FLAT_ITEM);
+        generator.generateFlatItem(EGItems.RESIN_BRICK, ModelTemplates.FLAT_ITEM);
     }
 
 
