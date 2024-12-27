@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.wetnoodle.eepygarden.registry.EGBlocks;
+import net.wetnoodle.eepygarden.registry.EGInventorySorting;
 import net.wetnoodle.eepygarden.registry.EGItems;
 import net.wetnoodle.eepygarden.registry.EGSounds;
 
@@ -13,6 +14,7 @@ public class TheGardenAwokeTooEarly implements ModInitializer {
     public void onInitialize() {
         EGBlocks.init();
         EGItems.init();
+        EGInventorySorting.init();
         EGSounds.init();
         clientInitialize();
     }
