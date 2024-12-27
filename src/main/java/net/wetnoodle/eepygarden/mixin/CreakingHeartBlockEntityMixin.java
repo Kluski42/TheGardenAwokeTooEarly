@@ -1,10 +1,14 @@
 package net.wetnoodle.eepygarden.mixin;
 
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
@@ -20,6 +24,7 @@ import org.apache.commons.lang3.mutable.Mutable;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.apache.commons.lang3.tuple.Pair;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -35,12 +40,22 @@ import java.util.function.Predicate;
 @Mixin(CreakingHeartBlockEntity.class)
 public abstract class CreakingHeartBlockEntityMixin extends BlockEntity {
 
+    @Shadow
+    private int emitter;
+
     public CreakingHeartBlockEntityMixin(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
         super(blockEntityType, blockPos, blockState);
     }
 
+    @Definition(id = "ServerLevel", type = ServerLevel.class)
+    @Expression("? instanceof ServerLevel")
+    @ModifyExpressionValue(method = "creakingHurt", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private boolean eepyGarden$instanceOf(boolean isServerLevel) {
+        return (isServerLevel && emitter <= 0);
+    }
+
     @Inject(method = "creakingHurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/CreakingHeartBlockEntity;emitParticles(Lnet/minecraft/server/level/ServerLevel;IZ)V"))
-    public void eepyGarden$spreadResin(CallbackInfo ci) {
+    private void eepyGarden$spreadResin(CallbackInfo ci) {
         int i = level.getRandom().nextIntBetweenInclusive(2, 3);
 
         for (int j = 0; j < i; j++) {
@@ -51,7 +66,6 @@ public abstract class CreakingHeartBlockEntityMixin extends BlockEntity {
         }
     }
 
-    // Spammable for some reason
     @Unique
     private Optional<BlockPos> spreadResin() {
         Mutable<BlockPos> mutable = new MutableObject<>(null);
@@ -96,6 +110,7 @@ public abstract class CreakingHeartBlockEntityMixin extends BlockEntity {
      * This is modified jank stolen from 1.21.4
      * true = BlockPos.TraversalNodeStatus.ACCEPT
      * false = BlockPos.TraversalNodeStatus.STOP
+     *
      * @return
      */
     @Unique
